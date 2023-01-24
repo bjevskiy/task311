@@ -26,7 +26,7 @@ public class User {
 
     @Column
     @Email(message = "Enter valid email like mail@mail.com", regexp = ".+@.+\\..+")
-    @Size(min = 5, max = 30, message = "Mail field must be between 2 and 30 characters")
+    @Size(min = 5, max = 30, message = "Mail field must be between 5 and 30 characters")
     private String mail;
 
     @CreationTimestamp
