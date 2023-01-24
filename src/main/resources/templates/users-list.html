@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 311 Users CRUD</title>
+</head>
+<body>
+<div>
+    <h1>Users list</h1>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Mail</th>
+            <th>Creation date</th>
+            <th>Last modification date</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.name}">user</td>
+            <td th:text="${user.mail}"></td>
+            <td th:text="${user.creationDate}"></td>
+            <td th:text="${user.lastModify}"></td>
+            <td>
+                <a th:href="@{/update/{id}(id=${user.id})}">Update</a>
+                <a th:href="@{/deleteUser/{id}(id=${user.id})}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<br/>
+<hr/>
+<button>
+    <a th:href="@{/newUser}">Create new user</a>
+</button>
+</div>
+</body>
+</html>
